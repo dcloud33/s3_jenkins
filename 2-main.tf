@@ -98,5 +98,5 @@ resource "aws_s3_object" "image5" {
 
 // test updated
 
-//test-1-2-3-4-5-6
+//test-1-2-3-4-5
 
