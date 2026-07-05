@@ -20,11 +20,11 @@ pipeline {
             }
         }
 
-        stage('Checkout Code') {
-            steps {
-                git branch: 'main', url: 'https://github.com/dcloud33/jenkins-s3-test.git'
-            }
-        }
+        // stage('Checkout Code') {
+        //     steps {
+        //         git branch: 'main', url: 'https://github.com/dcloud33/jenkins-s3-test.git'
+        //     }
+        // }
 
         stage('Initialize Terraform') {
             steps {
