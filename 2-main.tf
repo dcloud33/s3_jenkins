@@ -36,7 +36,7 @@ resource "aws_s3_bucket_policy" "public_access" {
     ]
   })
    
- ** depends_on = [ aws_s3_bucket_public_access_block.practice_lab ]
+ // depends_on = [ aws_s3_bucket_public_access_block.practice_lab ]
 }
 
 
