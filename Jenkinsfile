@@ -41,9 +41,13 @@ pipeline {
 
         stage('Validate Terraform') {
             steps {
-                sh '''
-                    terraform validate
-                '''
+                timeout(time: 2, unit: 'MINUTES') {
+                    sh '''
+                        echo "Running terraform validate..."
+                        terraform validate
+                        echo "Terraform validate completed."
+                    '''
+                }
             }
         }
 
