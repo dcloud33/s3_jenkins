@@ -66,13 +66,14 @@ pipeline {
 
         stage('Apply Terraform') {
             steps {
-                //input message: 'Approve Terraform Apply?', ok: 'Deploy'
+                input message: 'Approve Terraform Apply?', ok: 'Deploy'
+
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
                     credentialsId: 'jenkins_test001'
                 ]]) {
                     sh '''
-                        terraform apply -auto-approve tfplan
+                        terraform apply tfplan
                     '''
                 }
             }
@@ -99,7 +100,7 @@ pipeline {
                             credentialsId: 'jenkins_test001'
                         ]]) {
                             sh '''
-                                terraform destroy -auto-approve
+                                terraform destroy
                             '''
                         }
                     } else {
